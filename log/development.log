@@ -1,0 +1,309 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-06-04 17:08:03 -0300
+Served asset /rails.png - 200 OK (50ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2012-06-04 17:08:08 -0300
+Processing by Rails::InfoController#properties as HTML
+  Rendered inline template (74.0ms)
+Completed 200 OK in 286ms (Views: 286.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (506.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (232.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateFabricantes (20120604201653)
+  [1m[35m (50.0ms)[0m  CREATE TABLE `fabricantes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(255), `website` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (62.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604201653')[0m
+  [1m[35m (0.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (101.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (1.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateManufacturers (20120604210200)
+  [1m[35m (215.0ms)[0m  CREATE TABLE `manufacturers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `website` varchar(255), `country` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604210200')[0m
+  [1m[35m (0.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateManufacturers (20120604210200)
+Migrating to CreateSegments (20120604210736)
+  [1m[35m (105.0ms)[0m  CREATE TABLE `segments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604210736')[0m
+Migrating to CreateCompares (20120604210832)
+  [1m[35m (17.0ms)[0m  CREATE TABLE `compares` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `date` date, `description` varchar(255), `user_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604210832')[0m
+Migrating to CreateCategories (20120604210903)
+  [1m[35m (23.0ms)[0m  CREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604210903')[0m
+Migrating to CreateFamilies (20120604210918)
+  [1m[35m (23.0ms)[0m  CREATE TABLE `families` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604210918')[0m
+Migrating to CreateDevices (20120604210936)
+  [1m[35m (36.0ms)[0m  CREATE TABLE `devices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `launch` date, `form` varchar(255), `width` float, `height` float, `depth` float, `consumption` float, `btu` float, `weight` float, `ru` int(11), `oem_id` int(11), `isoem` tinyint(1), `image` varchar(255), `segment_id` int(11), `family_id` int(11), `manufactory_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (39.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604210936')[0m
+Migrating to CreateItems (20120604210952)
+  [1m[35m (51.0ms)[0m  CREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `categoria_id` int(11), `name` varchar(255), `metric` varchar(255), `compliance` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (36.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604210952')[0m
+Migrating to CreateIntegrations (20120604211113)
+  [1m[36m (1.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateManufacturers (20120604210200)
+Migrating to CreateSegments (20120604210736)
+Migrating to CreateCompares (20120604210832)
+Migrating to CreateCategories (20120604210903)
+Migrating to CreateFamilies (20120604210918)
+Migrating to CreateDevices (20120604210936)
+Migrating to CreateItems (20120604210952)
+Migrating to CreateIntegrations (20120604211113)
+  [1m[35m (58.0ms)[0m  CREATE TABLE `integrations` (`device_a_id` int(11), `device_b_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604211113')[0m
+Migrating to CreateSimilars (20120604211146)
+  [1m[35m (15.0ms)[0m  CREATE TABLE `similars` (`device_c_id` int(11), `device_d_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604211146')[0m
+Migrating to CreateUsers (20120604211200)
+  [1m[35m (25.0ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `password` varchar(255), `username` varchar(255), `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604211200')[0m
+Migrating to CreateCategoriesFamilies (20120604211228)
+  [1m[35m (8.0ms)[0m  CREATE TABLE `categories_families` (`category_id` int(11), `family_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (8.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604211228')[0m
+Migrating to CreateDevicesCompares (20120604211257)
+  [1m[35m (8.0ms)[0m  CREATE TABLE `devices_compares` (`device_id` int(11), `compare_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604211257')[0m
+Migrating to CreateSpecifications (20120604211308)
+  [1m[35m (37.0ms)[0m  CREATE TABLE `specifications` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `item_id` int(11), `device_id` int(11), `compliance` tinyint(1), `decription` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120604211308')[0m
+  [1m[35m (0.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-06-04 19:21:43 -0300
+Served asset /rails.png - 304 Not Modified (65ms)
+
+
+Started GET "/manufacurer/" for 127.0.0.1 at 2012-06-04 19:21:48 -0300
+
+ActionController::RoutingError (No route matches [GET] "/manufacurer"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (151.0ms)
+
+
+Started GET "/manufacturer/" for 127.0.0.1 at 2012-06-04 19:21:57 -0300
+
+ActionController::RoutingError (No route matches [GET] "/manufacturer"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/RailsInstaller/Ruby1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/manufacturers" for 127.0.0.1 at 2012-06-04 19:22:01 -0300
+Processing by ManufacturersController#index as HTML
+  [1m[36mManufacturer Load (31.0ms)[0m  [1mSELECT `manufacturers`.* FROM `manufacturers` [0m
+  Rendered manufacturers/index.html.erb within layouts/application (1.0ms)
+Compiled manufacturers.css  (90ms)  (pid 8112)
+Compiled scaffolds.css  (26ms)  (pid 8112)
+Compiled application.css  (315ms)  (pid 8112)
+Compiled jquery.js  (11ms)  (pid 8112)
+Compiled jquery_ujs.js  (4ms)  (pid 8112)
+Compiled manufacturers.js  (758ms)  (pid 8112)
+Compiled application.js  (1069ms)  (pid 8112)
+Completed 200 OK in 2319ms (Views: 1600.1ms | ActiveRecord: 87.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-04 19:22:04 -0300
+Served asset /scaffolds.css - 200 OK (3ms)
+
+
+Started GET "/assets/manufacturers.css?body=1" for 127.0.0.1 at 2012-06-04 19:22:04 -0300
+Served asset /manufacturers.css - 200 OK (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-04 19:22:04 -0300
+Served asset /application.css - 200 OK (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:04 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:04 -0300
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/manufacturers.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:04 -0300
+Served asset /manufacturers.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:04 -0300
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/manufacturers/new" for 127.0.0.1 at 2012-06-04 19:22:06 -0300
+Processing by ManufacturersController#new as HTML
+  Rendered manufacturers/_form.html.erb (87.0ms)
+  Rendered manufacturers/new.html.erb within layouts/application (214.0ms)
+Completed 200 OK in 243ms (Views: 235.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:07 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/manufacturers.css?body=1" for 127.0.0.1 at 2012-06-04 19:22:07 -0300
+Served asset /manufacturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-04 19:22:07 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:07 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-04 19:22:07 -0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/manufacturers.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:07 -0300
+Served asset /manufacturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-04 19:22:07 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/manufacturers" for 127.0.0.1 at 2012-06-04 19:22:21 -0300
+Processing by ManufacturersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JElrMvI5YeB6G0Bvt9HslUHC/GLgkqUhof6e6fyCeU=", "manufacturer"=>{"name"=>"EMC ", "website"=>"www.emc.com.br", "country"=>"US"}, "commit"=>"Create Manufacturer"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: name, website, country):
+  app/controllers/manufacturers_controller.rb:43:in `new'
+  app/controllers/manufacturers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (108.0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-06-04 19:25:58 -0300
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/manufacturers" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Processing by ManufacturersController#index as HTML
+  [1m[35mManufacturer Load (5.0ms)[0m  SELECT `manufacturers`.* FROM `manufacturers` 
+  Rendered manufacturers/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 16.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manufacturers.css?body=1" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Served asset /manufacturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manufacturers.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Served asset /manufacturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:06 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/manufacturers/new" for 127.0.0.1 at 2012-06-04 19:26:07 -0300
+Processing by ManufacturersController#new as HTML
+  Rendered manufacturers/_form.html.erb (4.0ms)
+  Rendered manufacturers/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 29ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-04 19:26:07 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:07 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/manufacturers.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:08 -0300
+Served asset /manufacturers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-04 19:26:08 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manufacturers.css?body=1" for 127.0.0.1 at 2012-06-04 19:26:08 -0300
+Served asset /manufacturers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:08 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-04 19:26:08 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/manufacturers" for 127.0.0.1 at 2012-06-04 19:26:12 -0300
+Processing by ManufacturersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Dl9JRKEZ7YbORNDPmXU5HCpFqAt7dHHhqBIvkuy2Hlo=", "manufacturer"=>{"name"=>"teste", "website"=>"teste", "country"=>"teste"}, "commit"=>"Create Manufacturer"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: name, website, country):
+  app/controllers/manufacturers_controller.rb:43:in `new'
+  app/controllers/manufacturers_controller.rb:43:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.2/lib/ruby/gems/1.9.1/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (64.0ms)
